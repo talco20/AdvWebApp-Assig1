@@ -1,0 +1,86 @@
+### Advanced Web App - Assignment 1 - REST API Testing
+### Tal Cohen - Shahar Miller
+
+@baseUrl = http://localhost:3000
+
+###############################################
+# POST API - Create, Read, Update Operations
+###############################################
+
+### Create a new post
+POST {{baseUrl}}/post
+Content-Type: application/json
+
+{
+  "title": "Introduction to REST APIs",
+  "content": "REST APIs are fundamental to modern web development",
+  "sender": "jensen_huang"
+}
+
+### Get all posts in the database
+GET {{baseUrl}}/post
+
+### Get a specific post by ID (replace with actual ID after creating a post)
+GET {{baseUrl}}/post/674b9e8f4d3a2b1c5e6f7890
+
+### Filter posts by sender
+GET {{baseUrl}}/post?sender=jensen_huang
+
+### Update an existing post (replace with actual ID)
+PUT {{baseUrl}}/post/674b9e8f4d3a2b1c5e6f7890
+Content-Type: application/json
+
+{
+  "title": "Introduction to REST APIs - Updated",
+  "content": "REST APIs are fundamental to modern web development. This has been updated!",
+  "sender": "jensen_huang"
+}
+
+###############################################
+# COMMENTS API - Full CRUD Operations
+# TODO
+###############################################
+
+# Comment endpoints will be added here
+
+
+###############################################
+# COMPLETE TEST WORKFLOW
+###############################################
+
+### Step 1: Create first test post
+POST {{baseUrl}}/post
+Content-Type: application/json
+
+{
+  "title": "Test Post 1",
+  "content": "This is my first test post",
+  "sender": "test_user_1"
+}
+
+### Step 2: Create second test post
+POST {{baseUrl}}/post
+Content-Type: application/json
+
+{
+  "title": "Test Post 2",
+  "content": "This is my second test post",
+  "sender": "test_user_2"
+}
+
+### Step 3: View all created posts
+GET {{baseUrl}}/post
+
+### Step 4: Get posts by specific sender
+GET {{baseUrl}}/post?sender=test_user_1
+
+### Step 5: Update the first post (use actual post ID from Step 1)
+PUT {{baseUrl}}/post/REPLACE_WITH_ACTUAL_POST_ID
+Content-Type: application/json
+
+{
+  "title": "Test Post 1 - UPDATED",
+  "content": "This post has been updated",
+  "sender": "test_user_1"
+}
+

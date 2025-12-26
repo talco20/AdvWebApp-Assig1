@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { connectDB } from './utils/db.js';
+import postRoutes from './routes/postRoutes.js';
 
 dotenv.config();
 
@@ -19,8 +20,8 @@ app.get('/', (req, res) => {
     res.send("Advanced Web Applications - Assignment 1");
 });
 
-// TODO: Add routes here
-// app.use('/post', postRoutes);
+// API Routes
+app.use('/post', postRoutes);
 // app.use('/comments', commentRoutes);
 
 // Connect to database and start server
