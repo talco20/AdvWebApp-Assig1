@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 // API Routes
 app.use('/post', postRoutes);
-// app.use('/comments', commentRoutes);
+app.use('/comments', commentRoutes);
 
 // Connect to database and start server
 connectDB();
