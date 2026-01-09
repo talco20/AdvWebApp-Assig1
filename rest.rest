@@ -38,10 +38,45 @@ Content-Type: application/json
 
 ###############################################
 # COMMENTS API - Full CRUD Operations
-# TODO
 ###############################################
 
-# Comment endpoints will be added here
+### Create a new comment
+POST {{baseUrl}}/comments
+Content-Type: application/json
+
+{
+  "content": "This is a great post!",
+  "user": "comment_user",
+  "postId": "674b9e8f4d3a2b1c5e6f7890"
+}
+
+### Get all comments
+GET {{baseUrl}}/comments
+
+### Get comments for a specific post (replace with actual post ID)
+GET {{baseUrl}}/comments/674b9e8f4d3a2b1c5e6f7890
+
+### Get comments by specific user
+GET {{baseUrl}}/comments/user/comment_user
+
+### Get a specific comment by ID (replace with actual comment ID)
+GET {{baseUrl}}/comments/getComment/674b9e8f4d3a2b1c5e6f7891
+
+### Update a comment (replace YOUR_COMMENT_ID with actual ID)
+PUT {{baseUrl}}/comments/YOUR_COMMENT_ID
+Content-Type: application/json
+
+{
+  "content": "Updated comment content",
+  "user": "comment_user",
+  "postId": "674b9e8f4d3a2b1c5e6f7890"
+}
+
+### Delete a specific comment (replace YOUR_COMMENT_ID with actual ID)
+DELETE {{baseUrl}}/comments/YOUR_COMMENT_ID
+
+### Delete all comments (use with caution)
+DELETE {{baseUrl}}/comments
 
 
 ###############################################

@@ -43,14 +43,16 @@ For development with auto-reload:
 npm run dev
 ```
 
-## API Documentation
-API documentation will be available via Swagger UI at `/api-docs` when the server is running.
+## API Testing
 
-## Testing
-Run tests with coverage:
-```bash
-npm test
-```
+### REST Client Testing
+Use the `rest.rest` file with VS Code REST Client extension to test all API endpoints.
+
+The file includes:
+- Post CRUD operations (Create, Read, Update)
+- Comment CRUD operations (Create, Read, Update, Delete)
+- Query filtering by sender and user
+- Complete test workflow examples
 
 ## Project Structure
 ```
