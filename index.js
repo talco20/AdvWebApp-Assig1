@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Root route
 app.get('/', (req, res) => {
-    res.send("Advanced Web Applications - Assignment 1");
+    res.send("Advanced Web Applications - Assignment 1 - Shahar Miller & Tal Cohen");
 });
 
 // API Routes
