@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { connectDB } from './utils/db.js';
 import postRoutes from './routes/postRoutes.js';
+import commentRoutes from './routes/commentRoutes.js';
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Root route
 app.get('/', (req, res) => {
-    res.send("Advanced Web Applications - Assignment 1");
+    res.send("Advanced Web Applications - Assignment 1 - Shahar Miller & Tal Cohen");
 });
 
 // API Routes
@@ -26,8 +27,8 @@ app.use('/comments', commentRoutes);
 
 // Connect to database and start server
 connectDB();
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(PORT, 'localhost', () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
 
 export default app;
